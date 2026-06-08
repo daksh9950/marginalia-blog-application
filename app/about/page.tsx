@@ -165,7 +165,7 @@ export default function AboutPage() {
                 color: "var(--accent)",
               }}
             >
-              2025
+              2026
             </div>
             <div
               className="mt-2 text-xs uppercase tracking-wider"

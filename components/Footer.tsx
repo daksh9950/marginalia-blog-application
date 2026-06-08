@@ -125,7 +125,7 @@ export default function Footer() {
             color: "#444440",
           }}
         >
-          &copy; 2025 Marginalia. All rights reserved.
+          &copy; 2026 Marginalia. All rights reserved.
         </p>
       </div>
     </footer>

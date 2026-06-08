@@ -57,7 +57,7 @@ export default async function HomePage() {
                   color: "var(--accent)",
                 }}
               >
-                EST. 2025
+                EST. 2026
               </span>
               <div
                 className="h-[1px] w-[40px]"
