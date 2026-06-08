@@ -2,6 +2,7 @@ import PostGrid from "@/components/PostGrid";
 import BackToTop from "@/components/BackToTop";
 import { connectDB } from "@/lib/mongodb";
 import PostModel from "@/lib/models/Post";
+import type { Post } from "@/types/post";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +12,7 @@ export default async function HomePage() {
   // Fetch approved posts and convert to plain objects
   const postsDocs = await PostModel.find({ approved: true })
     .sort({ date: -1 })
-    .lean<any[]>();
+    .lean<Array<Post & { _id: unknown }>>();
 
   // Map to Post interface shape
   const posts = postsDocs.map((doc) => ({

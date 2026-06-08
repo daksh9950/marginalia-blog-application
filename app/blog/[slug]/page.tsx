@@ -77,7 +77,7 @@ export default async function BlogPostPage({
   const post = await PostModel.findOne({
     slug: params.slug,
     approved: true,
-  }).lean<any>();
+  }).lean<Post & { _id: unknown }>();
 
   if (!post) {
     notFound();
@@ -90,7 +90,7 @@ export default async function BlogPostPage({
     approved: true,
   })
     .limit(3)
-    .lean<any[]>();
+    .lean<Array<Post & { _id: unknown }>>();
 
   const relatedPosts: Post[] = relatedDocs.map((doc) => ({
     id: doc._id?.toString() || doc.id,

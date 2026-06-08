@@ -21,7 +21,7 @@ export default function AboutPage() {
             lineHeight: 1,
           }}
         >
-          "
+          &quot;
         </div>
 
         {/* Label */}
