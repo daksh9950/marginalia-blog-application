@@ -63,7 +63,7 @@ body {
 /* ── Post Card Hover ───────────────────────────────────── */
 .post-card:hover {
   border-color: rgba(232, 197, 71, 0.3);
-  transform: translateY(-4px);
+  transform: scale(1.03) translateY(-2px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
