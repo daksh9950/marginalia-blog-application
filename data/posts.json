@@ -1,0 +1,122 @@
+[
+  {
+    "id": "post-001",
+    "title": "Building Faster Interfaces With Edge Rendering",
+    "slug": "building-faster-interfaces-with-edge-rendering",
+    "excerpt": "A practical look at how edge rendering can reduce latency for global users.",
+    "content": "Edge rendering moves parts of the application closer to users, reducing round trips and improving perceived performance. The best results come from pairing cached content with dynamic data only where it is truly needed.",
+    "author": "Avery Stone",
+    "date": "2026-01-12",
+    "category": "Technology",
+    "thumbnail": "/images/posts/edge-rendering.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-002",
+    "title": "Design Systems That Teams Actually Use",
+    "slug": "design-systems-that-teams-actually-use",
+    "excerpt": "Good design systems balance consistency, documentation, and room for real product work.",
+    "content": "A useful design system is more than a component library. It gives teams shared language, sensible defaults, and clear rules for when to extend patterns instead of inventing new ones.",
+    "author": "Mina Patel",
+    "date": "2026-01-18",
+    "category": "Design",
+    "thumbnail": "/images/posts/design-systems.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-003",
+    "title": "A Simple Morning Routine for Deep Work",
+    "slug": "a-simple-morning-routine-for-deep-work",
+    "excerpt": "Small choices at the start of the day can protect your best attention.",
+    "content": "Deep work often begins before the work itself. A calm morning routine, a short priority list, and a distraction-free first hour can make difficult tasks feel less scattered.",
+    "author": "Jon Ellis",
+    "date": "2026-02-02",
+    "category": "Lifestyle",
+    "thumbnail": "/images/posts/morning-routine.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-004",
+    "title": "A Weekend Guide to Lisbon",
+    "slug": "a-weekend-guide-to-lisbon",
+    "excerpt": "How to spend two relaxed days exploring viewpoints, bakeries, and old streets in Lisbon.",
+    "content": "Lisbon rewards slow wandering. Start with a hilltop view, follow the tiled streets into Alfama, pause for coffee and pastries, then end the evening near the river as the city lights come on.",
+    "author": "Clara Mendes",
+    "date": "2026-02-14",
+    "category": "Travel",
+    "thumbnail": "/images/posts/lisbon-weekend.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-005",
+    "title": "The Secret to Better Weeknight Pasta",
+    "slug": "the-secret-to-better-weeknight-pasta",
+    "excerpt": "A few pantry habits can turn quick pasta into something rich and balanced.",
+    "content": "Weeknight pasta improves when you save starchy water, season in layers, and finish the noodles in the sauce. A bright topping like herbs, lemon, or toasted crumbs adds the final lift.",
+    "author": "Leo Hart",
+    "date": "2026-02-21",
+    "category": "Food",
+    "thumbnail": "/images/posts/weeknight-pasta.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-006",
+    "title": "Understanding AI-Assisted Development",
+    "slug": "understanding-ai-assisted-development",
+    "excerpt": "AI tools are most useful when treated as collaborators for iteration, review, and exploration.",
+    "content": "AI-assisted development works best with clear context, small feedback loops, and human judgment. The tool can draft, inspect, and explain, but teams still need ownership of architecture and quality.",
+    "author": "Nora Kim",
+    "date": "2026-03-03",
+    "category": "Technology",
+    "thumbnail": "/images/posts/ai-assisted-development.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-007",
+    "title": "Color Contrast Choices for Better Reading",
+    "slug": "color-contrast-choices-for-better-reading",
+    "excerpt": "Readable interfaces depend on contrast, hierarchy, and restraint.",
+    "content": "Contrast is not only about accessibility scores. Designers also need to consider text size, background texture, focus states, and how colors behave across light and dark modes.",
+    "author": "Mina Patel",
+    "date": "2026-03-17",
+    "category": "Design",
+    "thumbnail": "/images/posts/color-contrast.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-008",
+    "title": "Packing Light for a Mountain Trip",
+    "slug": "packing-light-for-a-mountain-trip",
+    "excerpt": "A compact packing list keeps mountain travel flexible without sacrificing comfort.",
+    "content": "Mountain weather changes quickly, so layers matter more than bulk. Choose versatile clothing, reliable shoes, a small first-aid kit, and only the electronics you will actually use.",
+    "author": "Clara Mendes",
+    "date": "2026-04-04",
+    "category": "Travel",
+    "thumbnail": "/images/posts/mountain-packing.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-009",
+    "title": "How to Reset Your Space Without Buying More",
+    "slug": "how-to-reset-your-space-without-buying-more",
+    "excerpt": "A room can feel fresh again with editing, rearranging, and better daily systems.",
+    "content": "Refreshing a space does not always require new objects. Remove what no longer serves the room, improve storage for repeated routines, and rearrange furniture around how you actually live.",
+    "author": "Jon Ellis",
+    "date": "2026-04-16",
+    "category": "Lifestyle",
+    "thumbnail": "/images/posts/space-reset.jpg",
+    "approved": true
+  },
+  {
+    "id": "post-010",
+    "title": "Building a Better Brunch Board",
+    "slug": "building-a-better-brunch-board",
+    "excerpt": "Balance texture, color, and prep-ahead ingredients for an easy shared meal.",
+    "content": "A good brunch board mixes sweet, savory, crisp, and creamy elements. Prepare spreads and sliced produce ahead of time, then add warm bread or eggs just before serving.",
+    "author": "Leo Hart",
+    "date": "2026-05-01",
+    "category": "Food",
+    "thumbnail": "/images/posts/brunch-board.jpg",
+    "approved": true
+  }
+]
