@@ -1,9 +1,11 @@
 import Link from "next/link";
+import ImageWithFallback from "@/components/ImageWithFallback";
 import type { Post } from "@/types/post";
+import { getCategoryBadgeClasses } from "@/lib/utils";
 
 interface PostCardProps {
   post: Post;
-  compact?: boolean;
+  index?: number;
 }
 
 function formatPostDate(date: string) {
@@ -14,47 +16,129 @@ function formatPostDate(date: string) {
   }).format(new Date(date));
 }
 
-export default function PostCard({ post, compact = false }: PostCardProps) {
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+export default function PostCard({ post, index = 0 }: PostCardProps) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block overflow-hidden border border-gray-200 bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+      className="post-card animate-fade-up group block overflow-hidden rounded-xl border opacity-0 transition-all duration-300 ease-in-out [animation-fill-mode:forwards]"
+      style={{
+        background: "var(--surface)",
+        borderColor: "var(--border)",
+        animationDelay: `${index * 80}ms`,
+      }}
     >
-      <div
-        className={`overflow-hidden bg-gray-100 ${
-          compact ? "aspect-[16/9]" : "aspect-[16/10]"
-        }`}
-      >
-        <img
-          src={post.thumbnail}
-          alt=""
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+      {/* ── Thumbnail ────────────────────────────────────── */}
+      <div className="relative h-[200px] overflow-hidden">
+        {post.thumbnail ? (
+          <ImageWithFallback
+            src={post.thumbnail}
+            alt={post.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            fallbackElement={
+              <div
+                className="h-full w-full"
+                style={{
+                  background:
+                    "linear-gradient(to bottom right, #1A1A1A, #2A2A2A)",
+                }}
+              />
+            }
+          />
+        ) : (
+          <div
+            className="h-full w-full"
+            style={{
+              background: "linear-gradient(to bottom right, #1A1A1A, #2A2A2A)",
+            }}
+          />
+        )}
       </div>
 
-      <div className={`space-y-3 ${compact ? "p-4" : "p-5"}`}>
-        <span className="inline-flex items-center bg-gray-900 px-2 py-1 text-xs font-semibold uppercase tracking-normal text-white">
+      {/* ── Card Body ────────────────────────────────────── */}
+      <div className="p-5">
+        {/* Category Badge */}
+        <span
+          className={`inline-block rounded px-2.5 py-1 text-xs uppercase tracking-wider ${getCategoryBadgeClasses(
+            post.category
+          )}`}
+          style={{ fontFamily: "var(--font-mono), monospace" }}
+        >
           {post.category}
         </span>
 
-        <div className="space-y-2">
-          <h2
-            className={`line-clamp-2 font-semibold leading-snug text-gray-950 ${
-              compact ? "text-base" : "text-lg"
-            }`}
-          >
-            {post.title}
-          </h2>
-          <p className="line-clamp-3 text-sm leading-6 text-gray-600">
-            {post.excerpt}
-          </p>
-        </div>
+        {/* Title */}
+        <h2
+          className="mt-3 text-lg font-bold leading-snug"
+          style={{
+            fontFamily: "var(--font-heading), serif",
+            color: "var(--text)",
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+          }}
+        >
+          {post.title}
+        </h2>
 
-        <div className="flex items-center justify-between gap-3 text-xs text-gray-500">
-          <span className="truncate font-medium text-gray-700">
-            {post.author}
-          </span>
-          <time dateTime={post.date}>{formatPostDate(post.date)}</time>
+        {/* Excerpt */}
+        <p
+          className="mt-2 text-sm leading-relaxed"
+          style={{
+            color: "var(--muted)",
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+          }}
+        >
+          {post.excerpt}
+        </p>
+
+        {/* Divider */}
+        <div
+          className="mt-4 border-t pt-4"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <div className="flex items-center justify-between">
+            {/* Author */}
+            <div className="flex items-center gap-2.5">
+              <div
+                className="flex h-8 w-8 items-center justify-center rounded-full text-xs"
+                style={{
+                  background: "var(--border)",
+                  color: "var(--muted)",
+                  fontFamily: "var(--font-mono), monospace",
+                }}
+              >
+                {getInitials(post.author)}
+              </div>
+              <span className="text-sm" style={{ color: "var(--muted)" }}>
+                {post.author}
+              </span>
+            </div>
+
+            {/* Date */}
+            <time
+              dateTime={post.date}
+              className="text-xs"
+              style={{
+                fontFamily: "var(--font-mono), monospace",
+                color: "#444440",
+              }}
+            >
+              {formatPostDate(post.date)}
+            </time>
+          </div>
         </div>
       </div>
     </Link>

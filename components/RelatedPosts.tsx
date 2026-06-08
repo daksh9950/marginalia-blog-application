@@ -31,8 +31,8 @@ export default async function RelatedPosts({
     <section className="space-y-5">
       <h2 className="text-xl font-semibold text-gray-950">Related Posts</h2>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} compact />
+        {posts.map((post, i) => (
+          <PostCard key={post.slug} post={post} index={i} />
         ))}
       </div>
     </section>
