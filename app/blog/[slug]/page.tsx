@@ -5,13 +5,23 @@ import { connectDB } from "@/lib/mongodb";
 import PostModel from "@/lib/models/Post";
 import RelatedPosts from "@/components/RelatedPosts";
 
-// Generate static params for SSG
+export const dynamic = "force-dynamic";
+
+// Avoid making production builds depend on a live MongoDB connection.
 export async function generateStaticParams() {
-  await connectDB();
-  const posts = await PostModel.find({ approved: true }, "slug").lean<{ slug: string }[]>();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  try {
+    await connectDB();
+    const posts = await PostModel.find({ approved: true }, "slug").lean<
+      { slug: string }[]
+    >();
+
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.error("Failed to generate blog static params:", error);
+    return [];
+  }
 }
 
 // Generate metadata for SEO
